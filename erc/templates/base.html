@@ -4,6 +4,7 @@
     <title>Инфо Сити Блиц</title>
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/sticky-footer.css" />
     <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
   </head>
   <body>
@@ -34,5 +35,10 @@
     </nav>
     {% block content %}
     {% endblock %}
+    <div class="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </div>
   </body>
 </html>
