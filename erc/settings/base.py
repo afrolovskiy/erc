@@ -84,3 +84,7 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = (
     'erc/templates',
 )
+
+STATICFILES_DIRS = (
+    'erc/static',
+)
