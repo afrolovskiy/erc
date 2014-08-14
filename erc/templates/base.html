@@ -4,40 +4,34 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <title>Инфо Сити Блиц</title>
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/sticky-footer.css" />
     <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
   </head>
   <body>
-<!--     <div class="wrapper">
-       see at http://stackoverflow.com/questions/16377206/add-a-full-width-image-above-a-bootstrap-navbar
-      <img src="{{STATIC_URL}}images/header.jpg">
-    </div> -->
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="{% url 'index' %}">ИнфоСитиБлиц</a>
+    <div class="container">
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'index' %}">ИнфоСитиБлиц</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li{% block nav-about %}{% endblock %}><a href="{% url 'index' %}">О компании</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li{% block nav-services %}{% endblock %}><a href="{% url 'services' %}">Услуги</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li{% block nav-feedback %}{% endblock %}><a href="{% url 'feedback' %}">Обратная связь</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li{% block nav-contacts %}{% endblock %}><a href="{% url 'contacts' %}">Контакты</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li{% block nav-about %}{% endblock %}><a href="{% url 'index' %}">О компании</a></li>
-          </ul>
-          <ul class="nav navbar-nav">
-            <li{% block nav-services %}{% endblock %}><a href="{% url 'services' %}">Услуги</a></li>
-          </ul>
-          <ul class="nav navbar-nav">
-            <li{% block nav-feedback %}{% endblock %}><a href="{% url 'feedback' %}">Обратная связь</a></li>
-          </ul>
-          <ul class="nav navbar-nav">
-            <li{% block nav-contacts %}{% endblock %}><a href="{% url 'contacts' %}">Контакты</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    {% block content %}
-    {% endblock %}
-    <div class="footer">
-      <!-- see at http://getbootstrap.com/examples/sticky-footer/ and http://stackoverflow.com/questions/19756997/how-to-create-a-sticky-footer-that-plays-well-with-bootstrap-3 -->
-      <div class="container">
+      </nav>
+      {% block content %}
+      {% endblock %}
+      <div class="footer">
         <p>
           Copyright (c) 2014 ООО "Инфо Сити Блиц"
         </p>
